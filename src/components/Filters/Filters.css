@@ -1,0 +1,60 @@
+.filters {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+.filters > div {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filters input[type="text"] {
+  width: 12rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.filters label {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.filters select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    font-size: 12px;
+    justify-content: center;
+  }
+
+  .filters > div {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .filters {
+    font-size: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filters > div {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
