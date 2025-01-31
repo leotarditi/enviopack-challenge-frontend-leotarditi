@@ -3,7 +3,7 @@ import { UserContext } from "../contexts/user"
 
 export function useUser() {
   const {
-    state: {user},
+    state: { user },
   } = useContext(UserContext)
 
   return user

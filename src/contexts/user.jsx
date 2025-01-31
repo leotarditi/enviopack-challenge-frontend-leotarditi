@@ -1,14 +1,14 @@
-import { createContext, useEffect, useState } from 'react'
-import api from '../user/api'
+import { createContext, useEffect, useState } from "react"
+import api from "../user/api"
 
 export const UserContext = createContext({})
 
-export function UserProvider ({ children }) {
+export function UserProvider({ children }) {
   const [user, setUser] = useState()
   const [status, setStatus] = useState("peding")
 
   function handleAddCredit(amount) {
-    if(!user) return
+    if (!user) return
 
     return api.credit.add(amount).then(() => {
       setUser({ ...user, credit: user.credit + amount })
@@ -21,16 +21,16 @@ export function UserProvider ({ children }) {
       setStatus("resolved")
     })
   }, [])
-  
-  if(!user || status === "pending") {
+
+  if (!user || status === "pending") {
     return <h1>Loading...</h1>
   }
 
   const state = {
-    user
+    user,
   }
   const action = {
-    addCredit: handleAddCredit
+    addCredit: handleAddCredit,
   }
 
   return (

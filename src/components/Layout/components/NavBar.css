@@ -41,6 +41,14 @@
   background-color: grey;
 }
 
+.cart a {
+  font-weight: 700;
+}
+
+.cart a:hover {
+  color: gainsboro;
+}
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .navbar {

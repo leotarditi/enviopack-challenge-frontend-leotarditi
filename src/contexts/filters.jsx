@@ -1,18 +1,19 @@
-import { createContext, useState } from 'react'
+import { createContext, useState } from "react"
 
 export const FiltersContext = createContext()
 
-export function FiltersProvider ({ children }) {
+export function FiltersProvider({ children }) {
   const [filters, setFilters] = useState({
-    query: '',
-    sortBy: 'newest',
+    query: "",
+    sortBy: "newest",
   })
 
   return (
-    <FiltersContext.Provider value={{
-      filters,
-      setFilters
-    }}
+    <FiltersContext.Provider
+      value={{
+        filters,
+        setFilters,
+      }}
     >
       {children}
     </FiltersContext.Provider>
