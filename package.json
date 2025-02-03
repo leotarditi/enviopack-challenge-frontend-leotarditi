@@ -1,30 +1,34 @@
 {
-  "name": "rspack-react-starter",
+  "name": "enviopack-challenge-frontend-leotarditi",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "cross-env NODE_ENV=production rspack build",
-    "dev": "cross-env NODE_ENV=development rspack serve",
+    "dev": "vite",
+    "build": "vite build",
     "format": "bunx biome check --fix",
-    "lint": "bunx biome check"
+    "lint": "bunx biome check",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "install": "^0.13.0",
-    "npm": "^11.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router": "^7.1.5",
-    "react-router-dom": "6"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@rspack/cli": "^1.2.2",
-    "@rspack/core": "^1.2.2",
-    "@rspack/plugin-react-refresh": "1.0.0",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "cross-env": "^7.0.3",
-    "globals": "^15.11.0",
-    "react-refresh": "^0.14.0"
+    "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-essentials": "^8.5.3",
+    "@storybook/addon-interactions": "^8.5.3",
+    "@storybook/addon-onboarding": "^8.5.3",
+    "@storybook/blocks": "^8.5.3",
+    "@storybook/react": "^8.5.3",
+    "@storybook/react-vite": "^8.5.3",
+    "@storybook/test": "^8.5.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "globals": "^15.14.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.5.3",
+    "vite": "^6.0.5"
   }
 }

@@ -7,5 +7,5 @@ export function useCredit() {
     action: { addCredit, removeCredit },
   } = useContext(UserContext)
 
-  return [user.credit, addCredit, removeCredit]
+  return { credit: user.credit, addCredit, removeCredit }
 }

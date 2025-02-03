@@ -11,6 +11,10 @@
   text-align: left;
 }
 
+.cart-table button {
+  float: right;
+}
+
 .cart-table th,
 .cart-table td {
   padding: 12px;
@@ -37,24 +41,17 @@
   text-align: center;
 }
 
-.cart-table .remove-button {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  float: right;
-}
-
-.cart-table .remove-button:hover {
-  background-color: #ff1a1a;
-}
-
 .cart-total {
   display: flex;
   justify-content: space-between;
   padding: 12px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
+}
+
+.cart-buttons {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
 }

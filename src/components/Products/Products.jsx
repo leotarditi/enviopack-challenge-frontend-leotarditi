@@ -1,4 +1,5 @@
 import { useCart } from "../../hooks/useCart"
+import Button from "../Button/Button"
 import "./Products.css"
 
 export function Products({ products }) {
@@ -32,7 +33,7 @@ export function Products({ products }) {
                   </p>
                 </div>
                 <div>
-                  <button
+                  <Button
                     className={isProductInCart ? "remove" : ""}
                     onClick={() => {
                       isProductInCart
@@ -43,7 +44,7 @@ export function Products({ products }) {
                     {isProductInCart
                       ? "Quitar del carrito"
                       : "Agregar al carrito"}
-                  </button>
+                  </Button>
                 </div>
               </li>
             )

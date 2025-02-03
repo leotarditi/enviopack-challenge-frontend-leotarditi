@@ -1,55 +1,8 @@
-# Envíopack - Challenge Frontend React
+# React + Vite
 
-## Objetivo
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-El challenge consiste en crear una aplicación web en React imitando una tienda e-commerce a partir de
-un archivo JSON con la información del usuario y los productos. El aspecto debe acercarse lo más
-posible al representado en las capturas de pantalla.
+Currently, two official plugins are available:
 
-## Requisitos
-
-- El proyecto debe desarrollarse en React y llamarse enviopack-challenge-frontend
-- Alojar el proyecto en Github en un repositorio público
-- Crear los componentes de UI
-
-# Rspack project
-
-## Setup
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-or
-
-```bash
-bun install
-```
-
-## Get started
-
-Start the dev server:
-
-```bash
-npm run dev
-```
-
-or
-
-```bash
-bun run dev
-```
-
-Build the app for production:
-
-```bash
-npm run build
-```
-
-or
-
-```bash
-bun run build
-```
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

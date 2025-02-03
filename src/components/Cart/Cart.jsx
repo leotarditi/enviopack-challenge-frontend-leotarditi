@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart"
 import { useCredit } from "../../hooks/useCredit";
 import "./Cart.css"
+import Button from "../Button/Button";
 
 export function Cart() {
   const navigate = useNavigate();
   const { removeFromCart, cart, clearCart } = useCart()
-  const [ credit, removeCredit ] = useCredit()
+  const { credit, removeCredit } = useCredit()
 
   const total = cart.reduce((sum, item) => sum + item.price, 0)
 
@@ -44,14 +45,14 @@ export function Cart() {
                       })}
                     </td>
                     <td>
-                      <button
-                        className="remove-button"
+                      <Button
+                        className="remove small"
                         onClick={() => {
                           removeFromCart(product)
                         }}
                       >
                         X
-                      </button>
+                      </Button>
                     </td>
                   </tr>
                 )
@@ -69,8 +70,8 @@ export function Cart() {
             </span>
           </div>
           <div className="cart-buttons">
-            <button onClick={() => navigate('/')}>Volver al Catálogo</button>
-            <button onClick={handleCheckout}>Finalizar Compra</button>
+            <Button onClick={() => navigate('/')}>Volver al Catálogo</Button>
+            <Button onClick={handleCheckout}>Finalizar Compra</Button>
           </div>
         </>
       ) : (

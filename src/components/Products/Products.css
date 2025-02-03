@@ -41,14 +41,6 @@
   background: #fff;
 }
 
-.remove {
-  color: oklch(0.444 0.177 26.899);
-  border-color: oklch(0.444 0.177 26.899);
-}
-.remove:hover {
-  background-color: oklch(0.444 0.177 26.899);
-}
-
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .products ul {

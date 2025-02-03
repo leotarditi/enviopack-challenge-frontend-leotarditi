@@ -3,9 +3,10 @@ import { useCart } from "../../../hooks/useCart"
 import { useCredit } from "../../../hooks/useCredit"
 import { useUser } from "../../../hooks/useUser"
 import "./NavBar.css"
+import Button from "../../Button/Button"
 
 function NavBar() {
-  const [credit, addCredit] = useCredit()
+  const { credit, addCredit } = useCredit()
   const { cart } = useCart()
   const user = useUser()
 
@@ -23,7 +24,7 @@ function NavBar() {
         </li>
         <li>
           <span>Crédito $ {credit}</span>
-          <button onClick={() => addCredit(1000)}>+1000</button>
+          <Button onClick={() => addCredit(1000)} className='secondary'>+1000</Button>
         </li>
       </ul>
     </nav>
