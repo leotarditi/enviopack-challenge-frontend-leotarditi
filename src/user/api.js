@@ -4,6 +4,6 @@ export default {
   fetch: () =>
     new Promise((resolve) => setTimeout(() => resolve({ profile }), 1000)),
   credit: {
-    add: (amount) => Promise.resolve({ amount }),
+    update: (amount) => Promise.resolve({ amount }),
   },
 }

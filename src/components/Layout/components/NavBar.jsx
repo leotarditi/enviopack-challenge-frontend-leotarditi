@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import { useCart } from "../../../hooks/useCart"
 import { useCredit } from "../../../hooks/useCredit"
 import { useUser } from "../../../hooks/useUser"
@@ -11,14 +12,14 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div>
-        <a href="/">Tienda de Productos</a>
+        <NavLink to="/">Tienda de Productos</NavLink>
       </div>
       <ul>
         <li>
           {user.firstName} {user.lastName}
         </li>
-        <li className="cart">
-          <a href="/carrito">Carrito ({cart.length})</a>
+        <li className="cart-link">
+          <NavLink to="/cart">Carrito ({cart.length})</NavLink>
         </li>
         <li>
           <span>Crédito $ {credit}</span>

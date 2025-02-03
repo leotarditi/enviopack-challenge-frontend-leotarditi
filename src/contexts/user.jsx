@@ -9,10 +9,24 @@ export function UserProvider({ children }) {
 
   function handleAddCredit(amount) {
     if (!user) return
+    if (amount <= 0) {
+      throw new Error('Invalid amount');
+    }
 
-    return api.credit.add(amount).then(() => {
+    return api.credit.update(amount).then(() => {
       setUser({ ...user, credit: user.credit + amount })
     })
+  }
+
+  function handleRemoveCredit(amount) {
+    if (!user) return;
+    if (amount <= 0 || amount > user.credit) {
+      throw new Error('Invalid amount');
+    }
+  
+    return api.credit.update(amount).then(() => {
+      setUser({ ...user, credit: user.credit - amount });
+    });
   }
 
   useEffect(() => {
@@ -31,6 +45,7 @@ export function UserProvider({ children }) {
   }
   const action = {
     addCredit: handleAddCredit,
+    removeCredit: handleRemoveCredit,
   }
 
   return (

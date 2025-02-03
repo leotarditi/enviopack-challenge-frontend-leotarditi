@@ -34,6 +34,11 @@ body {
   min-height: 100vh;
 }
 
+.screen {
+  max-width: 100%;
+  height: 100vh;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

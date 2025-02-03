@@ -23,7 +23,13 @@ export function Products({ products }) {
                 />
                 <div>
                   <strong>{product.title}</strong>
-                  <p>{product.price}</p>
+                  <p>
+                    {product.price.toLocaleString("es-ar", {
+                      style: "currency",
+                      currency: "ARS",
+                      minimumFractionDigits: 2,
+                    })}
+                  </p>
                 </div>
                 <div>
                   <button

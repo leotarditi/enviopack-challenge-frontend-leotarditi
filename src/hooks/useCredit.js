@@ -4,8 +4,8 @@ import { UserContext } from "../contexts/user"
 export function useCredit() {
   const {
     state: { user },
-    action: { addCredit },
+    action: { addCredit, removeCredit },
   } = useContext(UserContext)
 
-  return [user.credit, addCredit]
+  return [user.credit, addCredit, removeCredit]
 }

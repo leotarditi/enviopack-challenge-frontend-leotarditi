@@ -41,11 +41,11 @@
   background-color: grey;
 }
 
-.cart a {
+.cart-link a {
   font-weight: 700;
 }
 
-.cart a:hover {
+.cart-link a:hover {
   color: gainsboro;
 }
 
