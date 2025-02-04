@@ -4,7 +4,7 @@ import { useFilters } from "../hooks/useFilters"
 import api from "../products/api"
 import { Filters } from "../components/Filters/Filters"
 
-function Home() {
+function HomePage() {
   const { filterProducts } = useFilters()
   const [products, setProducts] = useState([])
   const [status, setStatus] = useState("pending")
@@ -24,9 +24,13 @@ function Home() {
         <h1>Catálogo</h1>
         <Filters />
       </header>
-      {status === "pending" ? <h1>Loading...</h1> : <Products products={filteredProducts} />}
+      {status === "pending" ? (
+        <h1>Loading...</h1>
+      ) : (
+        <Products products={filteredProducts} />
+      )}
     </div>
   )
 }
 
-export default Home
+export default HomePage
