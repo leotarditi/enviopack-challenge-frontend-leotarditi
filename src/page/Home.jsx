@@ -13,7 +13,7 @@ function HomePage() {
 
   useEffect(() => {
     api.list().then(({ products }) => {
-      const productsWithDiscount = products.map(product => {
+      const productsWithDiscount = products.map((product) => {
         const discountedPrice = product.price * (1 - product.discount / 100)
         return { ...product, price: discountedPrice }
       })
