@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should adjust purchase to fit within available credit by removing an item', async ({ page }) => {
-  await page.goto('http://localhost:5173/');
+  await page.goto('https://enviopack-challenge-frontend-leotardi.netlify.app/');
 
   await page.getByRole('button', { name: 'Agregar al carrito', exact: true }).nth(0).click();
   await page.getByRole('button', { name: 'Agregar al carrito', exact: true }).nth(1).click();

@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test"
 
 test("should complete the purchase successfully", async ({ page }) => {
-  await page.goto("http://localhost:5173/")
+  await page.goto("https://enviopack-challenge-frontend-leotardi.netlify.app/")
   await expect(page.getByRole("heading")).toHaveText("Loading...")
 
   /* Home page */
@@ -51,10 +51,10 @@ test("should complete the purchase successfully", async ({ page }) => {
   await expect(
     page.getByRole("button", { name: "Finalizar Compra" }),
   ).toBeVisible()
-  await expect(page.getByText("50000")).toBeVisible()
+  await expect(page.getByText("Crédito $ 50000+")).toBeVisible()
   await page.getByRole("button", { name: "Finalizar Compra" }).click()
 
   /* Purchase page */
-  await expect(page.getByText("28001")).toBeVisible()
+  await expect(page.getByText("Crédito $ 28001+")).toBeVisible()
   await expect(page.getByText("La compra se realizó con éxito")).toBeVisible()
 })

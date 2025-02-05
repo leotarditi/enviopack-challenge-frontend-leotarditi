@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test"
 test("should fail purchase when total exceeds available credit", async ({
   page,
 }) => {
-  await page.goto("http://localhost:5173/")
+  await page.goto("https://enviopack-challenge-frontend-leotardi.netlify.app/")
   await expect(page.getByRole("heading")).toHaveText("Loading...")
 
   /* Home page */

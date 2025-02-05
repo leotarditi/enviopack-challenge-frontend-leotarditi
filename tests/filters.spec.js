@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('should filter products by price ascendent', async ({ page }) => {
-  await page.goto('http://localhost:5173/');
+  await page.goto('https://enviopack-challenge-frontend-leotardi.netlify.app/');
 
   await page.getByLabel('Ordenar por').selectOption('priceAsc');
   const list = await page.locator('.products').first().textContent()
@@ -17,7 +17,7 @@ test('should filter products by price ascendent', async ({ page }) => {
 
 
 test('should filter products by price descendent', async ({ page }) => {
-  await page.goto('http://localhost:5173/');
+  await page.goto('https://enviopack-challenge-frontend-leotardi.netlify.app/');
 
   await page.getByLabel('Ordenar por').selectOption('priceDesc');
   const list = await page.locator('.products').first().textContent()
@@ -32,7 +32,7 @@ test('should filter products by price descendent', async ({ page }) => {
 });
 
 test('should work all filters together', async ({ page }) => {
-  await page.goto('http://localhost:5173/');
+  await page.goto('https://enviopack-challenge-frontend-leotardi.netlify.app/');
 
   /* Sorted by priceAsc */
   await page.getByLabel('Ordenar por').selectOption('priceAsc');
