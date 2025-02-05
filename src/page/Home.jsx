@@ -13,7 +13,11 @@ function HomePage() {
 
   useEffect(() => {
     api.list().then(({ products }) => {
-      setProducts(products)
+      const productsWithDiscount = products.map(product => {
+        const discountedPrice = product.price * (1 - product.discount / 100)
+        return { ...product, price: discountedPrice }
+      })
+      setProducts(productsWithDiscount)
       setStatus("resolved")
     })
   }, [])

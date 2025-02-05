@@ -107,7 +107,7 @@ test("should fail purchase when total exceeds available credit", async ({
   ).toBeVisible()
   await expect(page.getByText("Celular Samsung A01 Core 16GB")).toBeVisible()
   await expect(page.getByText("$ 15.999,00")).toBeVisible()
-  await expect(page.getByText("$ 63.997,00")).toBeVisible()
+  await expect(page.getByText("$ 59.317,18")).toBeVisible()
   await page.getByRole("button", { name: "Finalizar Compra" }).click()
   await expect(
     page.getByText(
