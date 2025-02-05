@@ -27,21 +27,21 @@ export function Cart() {
       {cart.length > 0 ? (
         <>
           <div className="cart-table">
-              {cart.map((product) => {
-                return (
-                  <div className="row" key={product.id}>
-                    <Product product={product} />
-                    <Button
-                      className="remove small"
-                      onClick={() => {
-                        removeFromCart(product)
-                      }}
-                    >
-                      X
-                    </Button>
-                  </div>
-                )
-              })}
+            {cart.map((product) => {
+              return (
+                <div className="row" key={product.id}>
+                  <Product product={product} />
+                  <Button
+                    className="remove small"
+                    onClick={() => {
+                      removeFromCart(product)
+                    }}
+                  >
+                    X
+                  </Button>
+                </div>
+              )
+            })}
           </div>
           <div className="cart-total">
             <span>Total:</span>

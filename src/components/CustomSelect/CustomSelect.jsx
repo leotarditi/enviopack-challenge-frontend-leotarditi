@@ -1,6 +1,13 @@
-import './CustomSelect.css'
+import "./CustomSelect.css"
 
-export function CustomSelect({ id, label, onChange, options, disabled, value }) {
+export function CustomSelect({
+  id,
+  label,
+  onChange,
+  options,
+  disabled,
+  value,
+}) {
   return (
     <>
       <label htmlFor={id}>{label}</label>

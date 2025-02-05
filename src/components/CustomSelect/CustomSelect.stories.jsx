@@ -1,5 +1,5 @@
-import { CustomSelect } from "./CustomSelect";
-import "./CustomSelect.css";
+import { CustomSelect } from "./CustomSelect"
+import "./CustomSelect.css"
 
 export default {
   title: "components/CustomSelect",
@@ -13,26 +13,26 @@ export default {
       { value: "value-3", label: "Label 3" },
     ],
   },
-};
+}
 
-const Template = (args) => <CustomSelect {...args} />;
+const Template = (args) => <CustomSelect {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   id: "custom-select",
   label: "Elige una opción",
-};
+}
 
-export const Disabled = Template.bind({});
+export const Disabled = Template.bind({})
 Disabled.args = {
   id: "custom-select",
   label: "Elige una opción",
   disabled: true,
-};
+}
 
-export const WithPreselectedOption = Template.bind({});
+export const WithPreselectedOption = Template.bind({})
 WithPreselectedOption.args = {
   id: "custom-select",
   label: "Elige una opción",
   value: "value-3",
-};
+}

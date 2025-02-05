@@ -1,8 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
-import { RoutesWithNotFound } from "./components/RoutesWithNotFound/RoutesWithNotFound"
-import Home from "./page/Home"
-import Cart from "./page/Cart"
 import Layout from "./components/Layout/Layout"
+import { RoutesWithNotFound } from "./components/RoutesWithNotFound/RoutesWithNotFound"
+import Cart from "./page/Cart"
+import Home from "./page/Home"
 import PurchasePage from "./page/PurchaseStatus"
 
 export const AppRouter = () => {

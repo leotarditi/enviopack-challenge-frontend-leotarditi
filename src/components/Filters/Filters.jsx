@@ -5,9 +5,9 @@ import { CustomInput } from "../CustomInput/CustomInput"
 import { CustomSelect } from "../CustomSelect/CustomSelect"
 
 const SORTER_OPTIONS = [
-  {value:"newest", label: "Más Reciente"},
-  {value:"priceAsc", label: "Menor Precio"},
-  {value:"priceDesc", label: "Mayor Precio"},
+  { value: "newest", label: "Más Reciente" },
+  { value: "priceAsc", label: "Menor Precio" },
+  { value: "priceDesc", label: "Mayor Precio" },
 ]
 
 export function Filters() {
@@ -32,7 +32,7 @@ export function Filters() {
   return (
     <section className="filters">
       <div>
-        <CustomInput 
+        <CustomInput
           type="text"
           id={searchFilterId}
           onChange={handleChangeSearch}
@@ -42,11 +42,11 @@ export function Filters() {
       </div>
 
       <div>
-        <CustomSelect 
-          id={sorterFilterId} 
-          label='Ordenar por' 
-          onChange={handleChangeSorter} 
-          options={SORTER_OPTIONS}  
+        <CustomSelect
+          id={sorterFilterId}
+          label="Ordenar por"
+          onChange={handleChangeSorter}
+          options={SORTER_OPTIONS}
         />
       </div>
     </section>

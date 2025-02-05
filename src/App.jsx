@@ -5,13 +5,13 @@ import { UserProvider } from "./contexts/user"
 
 function App() {
   return (
-  <UserProvider>
-    <FiltersProvider>
-      <CartProvider>
-        <AppRouter />
-      </CartProvider>
-    </FiltersProvider>
-  </UserProvider>
+    <UserProvider>
+      <FiltersProvider>
+        <CartProvider>
+          <AppRouter />
+        </CartProvider>
+      </FiltersProvider>
+    </UserProvider>
   )
 }
 

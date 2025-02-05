@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "format": "bunx biome check --fix",
-    "lint": "bunx biome check",
+    "format": "pnpm biome check --fix",
+    "lint": "pnpm biome check",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "test:unit": "vitest",
+    "coverage": "vitest run --coverage",
+    "test:e2e": "pnpm exec playwright test"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -19,7 +20,9 @@
     "react-router-dom": "^7.1.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@chromatic-com/storybook": "^3.2.4",
+    "@playwright/test": "^1.50.1",
     "@storybook/addon-essentials": "^8.5.3",
     "@storybook/addon-interactions": "^8.5.3",
     "@storybook/addon-onboarding": "^8.5.3",
@@ -30,6 +33,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.1",
     "@vitejs/plugin-react": "^4.3.4",
     "globals": "^15.14.0",
     "jsdom": "^26.0.0",

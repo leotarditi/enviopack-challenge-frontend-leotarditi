@@ -1,6 +1,13 @@
-import './CustomInput.css'
+import "./CustomInput.css"
 
-export function CustomInput({ type, id, onChange, value, placeholder, disabled }) {
+export function CustomInput({
+  type,
+  id,
+  onChange,
+  value,
+  placeholder,
+  disabled,
+}) {
   return (
     <input
       type={type}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
+import { Filters } from "../components/Filters/Filters"
 import { ProductsList } from "../components/ProductsList/ProductsList"
 import { useFilters } from "../hooks/useFilters"
 import api from "../products/api"
-import { Filters } from "../components/Filters/Filters"
 
 function HomePage() {
   const { filterProducts } = useFilters()

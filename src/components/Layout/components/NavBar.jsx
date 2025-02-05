@@ -24,7 +24,9 @@ function NavBar() {
         </li>
         <li>
           <span>Crédito $ {credit}</span>
-          <Button onClick={() => addCredit(1000)} className='secondary'>+1000</Button>
+          <Button onClick={() => addCredit(1000)} className="secondary">
+            +1000
+          </Button>
         </li>
       </ul>
     </nav>
