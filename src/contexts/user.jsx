@@ -1,16 +1,16 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useReducer, useState } from "react"
 import api from "../user/api"
 
 export const UserContext = createContext({})
 
 export function UserProvider({ children }) {
   const [user, setUser] = useState()
-  const [status, setStatus] = useState("peding")
+  const [status, setStatus] = useState("pending")
 
   function handleAddCredit(amount) {
     if (!user) return
     if (amount <= 0) {
-      throw new Error('Invalid amount');
+      throw new Error("Invalid amount")
     }
 
     return api.credit.update(amount).then(() => {
@@ -19,14 +19,14 @@ export function UserProvider({ children }) {
   }
 
   function handleRemoveCredit(amount) {
-    if (!user) return;
+    if (!user) return
     if (amount <= 0 || amount > user.credit) {
-      throw new Error('Invalid amount');
+      throw new Error("Invalid amount")
     }
-  
+
     return api.credit.update(amount).then(() => {
-      setUser({ ...user, credit: user.credit - amount });
-    });
+      setUser({ ...user, credit: user.credit - amount })
+    })
   }
 
   useEffect(() => {

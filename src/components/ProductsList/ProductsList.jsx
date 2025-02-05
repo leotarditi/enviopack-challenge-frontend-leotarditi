@@ -1,8 +1,9 @@
 import { useCart } from "../../hooks/useCart"
 import Button from "../Button/Button"
-import "./Products.css"
+import { Product } from "../Product/Product"
+import "./ProductsList.css"
 
-export function Products({ products }) {
+export function ProductsList({ products }) {
   const { addToCart, removeFromCart, cart } = useCart()
 
   const checkProductInCart = (product) => {
@@ -18,20 +19,7 @@ export function Products({ products }) {
 
             return (
               <li key={product.id}>
-                <img
-                  src="/assets/images/image-product.jpg"
-                  alt={product.title}
-                />
-                <div>
-                  <strong>{product.title}</strong>
-                  <p>
-                    {product.price.toLocaleString("es-ar", {
-                      style: "currency",
-                      currency: "ARS",
-                      minimumFractionDigits: 2,
-                    })}
-                  </p>
-                </div>
+                <Product product={product} />
                 <div>
                   <Button
                     className={isProductInCart ? "remove" : ""}

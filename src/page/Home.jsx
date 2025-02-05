@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Products } from "../components/Products/Products"
+import { ProductsList } from "../components/ProductsList/ProductsList"
 import { useFilters } from "../hooks/useFilters"
 import api from "../products/api"
 import { Filters } from "../components/Filters/Filters"
@@ -20,14 +20,16 @@ function HomePage() {
 
   return (
     <div className="screen">
-      <header>
-        <h1>Catálogo</h1>
-        <Filters />
-      </header>
       {status === "pending" ? (
         <h1>Loading...</h1>
       ) : (
-        <Products products={filteredProducts} />
+        <>
+          <header>
+            <h1>Catálogo</h1>
+            <Filters />
+          </header>
+          <ProductsList products={filteredProducts} />
+        </>
       )}
     </div>
   )

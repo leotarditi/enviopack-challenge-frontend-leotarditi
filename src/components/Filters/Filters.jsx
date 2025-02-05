@@ -1,6 +1,14 @@
 import { useId } from "react"
 import { useFilters } from "../../hooks/useFilters"
 import "./Filters.css"
+import { CustomInput } from "../CustomInput/CustomInput"
+import { CustomSelect } from "../CustomSelect/CustomSelect"
+
+const SORTER_OPTIONS = [
+  {value:"newest", label: "Más Reciente"},
+  {value:"priceAsc", label: "Menor Precio"},
+  {value:"priceDesc", label: "Mayor Precio"},
+]
 
 export function Filters() {
   const { filters, setFilters } = useFilters()
@@ -24,7 +32,7 @@ export function Filters() {
   return (
     <section className="filters">
       <div>
-        <input
+        <CustomInput 
           type="text"
           id={searchFilterId}
           onChange={handleChangeSearch}
@@ -34,12 +42,12 @@ export function Filters() {
       </div>
 
       <div>
-        <label htmlFor={sorterFilterId}>Ordenar por</label>
-        <select id={sorterFilterId} onChange={handleChangeSorter}>
-          <option value="newest">Más Reciente</option>
-          <option value="priceDesc">Menor Precio</option>
-          <option value="priceAsc">Mayor Precio</option>
-        </select>
+        <CustomSelect 
+          id={sorterFilterId} 
+          label='Ordenar por' 
+          onChange={handleChangeSorter} 
+          options={SORTER_OPTIONS}  
+        />
       </div>
     </section>
   )

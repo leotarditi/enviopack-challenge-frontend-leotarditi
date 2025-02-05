@@ -7,10 +7,11 @@ button {
   background-color: #1a1a1a;
   color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
+  border: none;
 }
 button:hover {
   background-color: #bababa;
-  color:#1a1a1a;
+  color: #1a1a1a;
 }
 button:focus,
 button:focus-visible {
@@ -21,18 +22,16 @@ button:focus-visible {
   padding: 5px 10px;
   background-color: #bababa;
   color: #1a1a1a;
-  cursor: pointer;
 }
 .secondary:hover {
-  color: #1a1a1a;
   background-color: rgba(255, 255, 255, 0.87);
+  color: #1a1a1a;
 }
 
 .remove {
   background-color: #ff4d4d;
   color: white;
 }
-
 .remove:hover {
   background-color: #ff1a1a;
   color: white;
@@ -40,4 +39,16 @@ button:focus-visible {
 
 .small {
   font-size: 0.75em;
+  padding: 0.4em 0.8em;
+}
+
+.large {
+  font-size: 1.25em;
+  padding: 0.8em 1.6em;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  color: rgba(255, 255, 255, 0.5);
 }

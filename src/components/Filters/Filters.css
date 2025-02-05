@@ -15,26 +15,6 @@
   flex-wrap: wrap;
 }
 
-.filters input[type="text"] {
-  width: 12rem;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.filters label {
-  padding: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.filters select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
 @media (max-width: 768px) {
   .filters {
     font-size: 12px;

@@ -1,11 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import { useCart } from "../../hooks/useCart"
-import { useCredit } from "../../hooks/useCredit";
+import { useCredit } from "../../hooks/useCredit"
 import "./Cart.css"
-import Button from "../Button/Button";
+import Button from "../Button/Button"
+import { Product } from "../Product/Product"
 
 export function Cart() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const { removeFromCart, cart, clearCart } = useCart()
   const { credit, removeCredit } = useCredit()
 
@@ -13,52 +14,35 @@ export function Cart() {
 
   const handleCheckout = () => {
     if (total <= credit) {
-      removeCredit(total);
-      clearCart();
-      navigate('/purchase-status?status=success');
+      removeCredit(total)
+      clearCart()
+      navigate("/purchase-status?status=success")
     } else {
-      navigate('/purchase-status?status=error');
+      navigate("/purchase-status?status=error")
     }
-  };
+  }
 
   return (
     <main className="cart">
       {cart.length > 0 ? (
         <>
-          <table className="cart-table">
-            <tbody>
+          <div className="cart-table">
               {cart.map((product) => {
                 return (
-                  <tr key={product.id}>
-                    <td>
-                      <img
-                        src="/assets/images/image-product.jpg"
-                        alt={product.title}
-                      />
-                    </td>
-                    <td>{product.title}</td>
-                    <td>
-                      {product.price.toLocaleString("es-ar", {
-                        style: "currency",
-                        currency: "ARS",
-                        minimumFractionDigits: 2,
-                      })}
-                    </td>
-                    <td>
-                      <Button
-                        className="remove small"
-                        onClick={() => {
-                          removeFromCart(product)
-                        }}
-                      >
-                        X
-                      </Button>
-                    </td>
-                  </tr>
+                  <div className="row" key={product.id}>
+                    <Product product={product} />
+                    <Button
+                      className="remove small"
+                      onClick={() => {
+                        removeFromCart(product)
+                      }}
+                    >
+                      X
+                    </Button>
+                  </div>
                 )
               })}
-            </tbody>
-          </table>
+          </div>
           <div className="cart-total">
             <span>Total:</span>
             <span>
@@ -70,7 +54,7 @@ export function Cart() {
             </span>
           </div>
           <div className="cart-buttons">
-            <Button onClick={() => navigate('/')}>Volver al Catálogo</Button>
+            <Button onClick={() => navigate("/")}>Volver al Catálogo</Button>
             <Button onClick={handleCheckout}>Finalizar Compra</Button>
           </div>
         </>
