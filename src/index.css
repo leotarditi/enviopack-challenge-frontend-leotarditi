@@ -37,9 +37,14 @@ body {
 .screen {
   max-width: 100%;
   height: 100vh;
+  padding-bottom: 10rem;
 }
 
 ul {
   list-style: none;
   padding: 0;
+}
+
+.get-more-products {
+  margin-bottom: 2rem;
 }
