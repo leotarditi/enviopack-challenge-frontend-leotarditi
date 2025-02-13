@@ -1,39 +1,50 @@
-import { useEffect, useState } from "react"
 import { Filters } from "../components/Filters/Filters"
 import { ProductsList } from "../components/ProductsList/ProductsList"
 import { useFilters } from "../hooks/useFilters"
-import api from "../products/api"
+import { useProducts } from "../hooks/useProducts"
 
 function HomePage() {
+  const { isLoading, isError, products, fetchNextPage, hasNextPage } =
+    useProducts()
+
   const { filterProducts } = useFilters()
-  const [products, setProducts] = useState([])
-  const [status, setStatus] = useState("pending")
 
   const filteredProducts = filterProducts(products)
 
-  useEffect(() => {
-    api.list().then(({ products }) => {
-      const productsWithDiscount = products.map((product) => {
-        const discountedPrice = product.price * (1 - product.discount / 100)
-        return { ...product, price: discountedPrice }
-      })
-      setProducts(productsWithDiscount)
-      setStatus("resolved")
-    })
-  }, [])
-
   return (
     <div className="screen">
-      {status === "pending" ? (
-        <h1>Loading...</h1>
-      ) : (
-        <>
-          <header>
-            <h1>Catálogo</h1>
-            <Filters />
-          </header>
-          <ProductsList products={filteredProducts} />
-        </>
+      {!isLoading && !isError && (
+        <header>
+          <h1>Catálogo</h1>
+          <Filters />
+        </header>
+      )}
+
+      {filteredProducts.length > 0 && (
+        <ProductsList products={filteredProducts} />
+      )}
+
+      {isLoading && <strong>Cargando...</strong>}
+
+      {isError && <p>Ha habido un error</p>}
+
+      {!isLoading && !isError && filteredProducts.length === 0 && (
+        <p>No hay elementos</p>
+      )}
+
+      {!isLoading && !isError && hasNextPage === true && (
+        <button
+          className="get-more-products"
+          onClick={() => {
+            void fetchNextPage()
+          }}
+        >
+          Cargar más productos
+        </button>
+      )}
+
+      {!isLoading && !isError && hasNextPage === false && (
+        <p>No hay más resultados</p>
       )}
     </div>
   )

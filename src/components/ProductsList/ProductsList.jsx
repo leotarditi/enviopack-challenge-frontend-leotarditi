@@ -12,35 +12,31 @@ export function ProductsList({ products }) {
 
   return (
     <main className="products">
-      {products.length > 0 ? (
-        <ul>
-          {products.map((product) => {
-            const isProductInCart = checkProductInCart(product)
+      <ul>
+        {products.map((product, index) => {
+          const isProductInCart = checkProductInCart(product)
 
-            return (
-              <li key={product.id}>
-                <Product product={product} />
-                <div>
-                  <Button
-                    className={isProductInCart ? "remove" : ""}
-                    onClick={() => {
-                      isProductInCart
-                        ? removeFromCart(product)
-                        : addToCart(product)
-                    }}
-                  >
-                    {isProductInCart
-                      ? "Quitar del carrito"
-                      : "Agregar al carrito"}
-                  </Button>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
-      ) : (
-        <p>No hay elementos que coincidan</p>
-      )}
+          return (
+            <li key={index}>
+              <Product product={product} />
+              <div>
+                <Button
+                  className={isProductInCart ? "remove" : ""}
+                  onClick={() => {
+                    isProductInCart
+                      ? removeFromCart(product)
+                      : addToCart(product)
+                  }}
+                >
+                  {isProductInCart
+                    ? "Quitar del carrito"
+                    : "Agregar al carrito"}
+                </Button>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
     </main>
   )
 }
